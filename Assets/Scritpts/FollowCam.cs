@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowCam : MonoBehaviour
 {
-    [Header("Set Inspector")]
+    [Header("Set in Inspector")]
     static public GameObject POI; //(point of interest) url on interested obj
     public Vector2 minXY = Vector2.zero;
     public float easing = 0.05f;

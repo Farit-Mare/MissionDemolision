@@ -57,8 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scritpts\Slightshot.cs" />
-    <Compile Include="Assets\Scritpts\FollowCam.cs" />
     <Compile Include="Assets\Scritpts\Cloud.cs" />
+    <Compile Include="Assets\Scritpts\FollowCam.cs" />
+    <Compile Include="Assets\Scritpts\CloudCrafter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
