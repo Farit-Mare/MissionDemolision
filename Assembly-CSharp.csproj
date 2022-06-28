@@ -58,8 +58,12 @@
   <ItemGroup>
     <Compile Include="Assets\Scritpts\Slightshot.cs" />
     <Compile Include="Assets\Scritpts\Cloud.cs" />
-    <Compile Include="Assets\Scritpts\FollowCam.cs" />
+    <Compile Include="Assets\Scritpts\ProjectileLine.cs" />
     <Compile Include="Assets\Scritpts\CloudCrafter.cs" />
+    <Compile Include="Assets\Scritpts\FollowCam.cs" />
+    <Compile Include="Assets\Scritpts\RigidbodySleep.cs" />
+    <Compile Include="Assets\Scritpts\Goal.cs" />
+    <Compile Include="Assets\Scritpts\MissionDemolition.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

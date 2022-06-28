@@ -29,9 +29,28 @@ public class FollowCam : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (POI == null) return;
-        //Get pos of interested obj
-        Vector3 destination = POI.transform.position;
+        Vector3 destination;
+        //If havent poi set P:[0.0.0]
+        if (POI == null)
+        {
+            destination = Vector3.zero;
+        } else
+        {
+            //Get pos of poi
+            destination = POI.transform.position;
+            //If POi is projectile - make sure that it stop
+            if (POI.tag == "Projectile")
+            {
+                //if it dont move
+                if (POI.GetComponent<Rigidbody>().IsSleeping())
+                {
+                    //back the source value of camera
+                    POI = null;
+                    //in next frame
+                    return;
+                }
+            }
+        }
         // 1 variant for stabilazation camrea in shot moment
         //find point between cam pos and destination
         destination = Vector3.Lerp(transform.position, destination, easing);

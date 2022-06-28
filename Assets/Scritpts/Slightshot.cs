@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Slightshot : MonoBehaviour
 {
+    static private Slightshot S;
+
     [Header("Set in Inspectore")]
     public GameObject prefabProjictle;
     public float velocityMult = 8f;
@@ -15,9 +17,19 @@ public class Slightshot : MonoBehaviour
     public bool aminigMode;
     private Rigidbody projectileRigidbody;
 
+    static public Vector3 LAUNCH_POS
+    {
+        get
+        {
+            if (S == null) return Vector3.zero;
+            return S.launchPos;
+        }
+    }
+
 
     private void Awake()
     {
+        S = this;
         Transform launchPointTrans = transform.Find("launchPoint");
         launchPoint = launchPointTrans.gameObject;
         launchPoint.SetActive(false);
@@ -80,6 +92,8 @@ public class Slightshot : MonoBehaviour
             projectileRigidbody.velocity = -mouseDelta * velocityMult;
             FollowCam.POI = projectle;
             projectle = null;
+            MissionDemolition.ShotFired();
+            ProjectileLine.S.poi = projectle;
         }
     }
 
